@@ -1,0 +1,211 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+}
+
+header nav ul {
+	list-style-type: none;
+	margin: 0 auto;
+	height: 50px;
+	overflow: hidden;
+	padding-left: 145px;
+}
+
+header nav ul li a {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+	text-decoration: none;
+	float: left;
+	padding-top: 10px;
+	padding-right: 30px;
+}
+
+header nav ul li a:hover {
+	color: #FFCC33
+}
+
+header nav {
+	background-color: rgba(0,0,0,0.5);
+	padding-right: 0px;
+}
+
+header {
+	width: 960px;
+	height: 300px;
+	background-image: url("books.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.active {
+	background-color: #FFCC33
+}
+
+.maincontent {
+	padding: 20px;
+	background-image: url("backgroundmain.jpg");
+	background-position: center;
+}
+
+footer {
+	padding: 20px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+#stack img {
+	height: 200px;
+}
+
+#stack {
+	float: right;
+	display: block;
+    margin-left: 30px;
+}
+
+p {
+	text-align: justify;
+	font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 25px;
+	margin-bottom: 18px;
+}
+
+h5 {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 15px;
+}
+
+.List_Box {
+	height: 200px;
+	background-image: url("backgroundmain.jpg");
+	background-position: center;
+	padding-bottom: 50px;
+}
+
+.button {
+	margin-top: 10px;
+}
+
+.submit ul {
+	margin: 0 -22px;
+}
+
+.submit ul li small {
+	columns: #CCCCCC;
+}
+
+.submit ul li {
+	float: left;
+	width: 45%;
+	padding-bottom: 8px;
+	list-style: none;
+}
+
+.List_Box_Return {
+	height: 200px;
+	background-image: url("backgroundmain.jpg");
+	background-position: center;
+}
+
+.return ul {
+	margin: 0 -50px;
+}
+
+.return ul li small {
+	columns: #CCCCCC;
+}
+
+.return ul li {
+	list-style: none;
+}
+
+.inner {
+	padding-left: 60px;
+}
+
+.inner form {
+	text-align: justify;
+	font-family: 'Roboto', sans-serif;
+	padding-top: 15px;
+	overflow: hidden;
+}
+
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 5px; 
+    margin-bottom: 15px; 
+	font-family: 'Roboto', sans-serif;
+}
+
+input[type=password] {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 5px; 
+    margin-bottom: 15px; 
+	font-family: 'Roboto', sans-serif;
+}
+
+input[type=submit] {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+input[type=submit]:hover {
+    background-color: rgba(0,30,30,0.5);
+}
+
+.container {
+    padding: 20px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#booklist {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+
+th, td {
+	text-align: left;
+    padding: 4px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#heading {
+	font-weight: bold;
+    color: #FFCC33;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
