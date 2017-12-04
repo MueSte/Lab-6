@@ -15,10 +15,12 @@ $title = "Delete book";
 include("header.php");
 ?>
 
-<!-- <h3>Search Catalog</h3>
+<div class="maincontent">
+
+<h3>Search Catalog</h3>
 <hr>
 
-<form action="delete.php" method="POST">
+<form action="deletebook.php" method="POST">
     <table>
         <tbody>
             <tr>
@@ -35,7 +37,7 @@ include("header.php");
             </tr>
         </tbody>
     </table>
-</form> -->
+</form>
 
 <h3>Book List</h3>
 <hr>
@@ -70,7 +72,7 @@ if ($db->connect_error) {
 
 # Build the query. Users are allowed to search on title, author, or both
 
-$query = " select bookid, Title, Author from Book";  //deleted Reserve
+$query = " select BookID, Title, Author from Book";  //deleted Reserve
 
 
 if ($searchtitle && !$searchauthor) { // Title search only
@@ -137,7 +139,7 @@ if (isset($_GET['submit'])) {
     // Prepare an update statement and execute it
     
         $stmt = $db->prepare("delete from Book where BookID = ?");
-        $stmt->bind_param('i', $bookid);
+        $stmt->bind_param('i', $BookID);
         $response = $stmt->execute();
         printf("<br>Book deleted!");
         printf("<br><a href=index.php>Return to home page </a>");
@@ -149,9 +151,10 @@ if (isset($_GET['submit'])) {
 
 <!-- It would be nice, if it would show up after I selected a book... -->
 
+<div class="maincontent">
 <h3>Delete book</h3>
 <hr>
-<form action="deletebook.php" method="GET">
+<form action="deletebook.php" method="GET"> 
    Are you sure you want to delete book?
    <?php
    $bookid = trim($_GET['BookID']);
@@ -159,6 +162,8 @@ if (isset($_GET['submit'])) {
    ?>
    <INPUT type="submit" name="submit" value="Continue">
 </form>
+</div>
+</div>
 
 <?php include("footer.php"); ?>
 

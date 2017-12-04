@@ -5,6 +5,9 @@ $title = "My reserved books";
 include("header.php");
 ?>
 
+
+<div class="maincontent">
+
 <?php 
 
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -35,6 +38,6 @@ $stmt->execute();
     echo "</table>";
 
 ?>
-
+</div>
 <?php include("footer.php"); ?>
 

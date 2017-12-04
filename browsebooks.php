@@ -3,6 +3,7 @@
 <body>
 
 
+<div class="maincontent">
 <h3>Search our Book Catalog</h3>
 <hr>
 You may search by title, or by author, or both<br>
@@ -108,7 +109,7 @@ if ($searchtitle && $searchauthor) { // Title and Author search
     }
     echo "</table>";
     ?>
-
+</div>
 
 
 <?php include("footer.php"); ?>

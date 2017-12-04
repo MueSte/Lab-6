@@ -11,7 +11,7 @@ $current_page = end($strings);
 
 $dbname = 'Library';
 $dbuser = 'root';
-$dbpass = 'password';
+$dbpass = 'password'; //because my database has a password
 $dbserver = 'localhost';
 
 #the following three will get you the current page, how?

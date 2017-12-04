@@ -7,8 +7,10 @@ if (!isset($_SESSION['username'])) {
 
 <?php include ("config.php"); ?>
 <?php include ("header.php"); ?>
-  <div>
+
+  <div class="maincontent">
 		<h3>Welcome to the Admin page</h3>
 		<p>Here you are able to add and delete books. </p><br>
   </div>
-  <?php include ("footer.php"); ?>
+
+  <?php include("footer.php"); ?>

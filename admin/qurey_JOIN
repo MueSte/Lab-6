@@ -1,0 +1,40 @@
+SELECT  Book.BookID, Book.Title, Author.AuthorID
+        FROM Book
+        JOIN authorbook ON Book.BookID =
+        authorbook.BookID
+        JOIN Author ON authorbook.AuthorID = Author.AuthorID
+
+--------------
+Tables I have:
+Book 
+    BookID*
+    Title*
+    Author
+    (Reserved)
+
+Author
+    AuthorID*
+    First Name
+    Last Name
+    ...
+
+authorbook 
+    AuthorID        
+    BookID
+
+
+Example:
+Orders
+    OrderID
+    CustomerID
+    OrderDate
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+Customers
+    CustomerID
+    CustomerName
+    ContactName
+    Country

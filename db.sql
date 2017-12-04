@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Erstellungszeit: 03. Dez 2017 um 19:23
+-- Erstellungszeit: 04. Dez 2017 um 23:31
 -- Server-Version: 5.6.35
 -- PHP-Version: 7.1.6
 
@@ -22,8 +22,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Admin` (
   `AdminID` int(11) NOT NULL,
-  `Adminname` varchar(20) NOT NULL,
-  `Adminpassword` varchar(20) NOT NULL
+  `Adminname` varchar(255) NOT NULL,
+  `Adminpassword` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -31,7 +31,7 @@ CREATE TABLE `Admin` (
 --
 
 INSERT INTO `Admin` (`AdminID`, `Adminname`, `Adminpassword`) VALUES
-(3, 'hello', '3c8ec4874488f6090a15');
+(1, 'hello', '3c8ec4874488f6090a157b014ce3397ca8e06d4f');
 
 -- --------------------------------------------------------
 
@@ -45,20 +45,44 @@ CREATE TABLE `Author` (
   `Year of Birth` int(11) DEFAULT NULL,
   `Social Security Number` varchar(20) DEFAULT NULL,
   `Link for more Info` varchar(255) DEFAULT NULL,
-  `ID` int(11) NOT NULL
+  `AuthorID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `Author`
 --
 
-INSERT INTO `Author` (`First Name`, `Last Name`, `Year of Birth`, `Social Security Number`, `Link for more Info`, `ID`) VALUES
-('Ruth', 'Ware', 1977, NULL, 'http://www.ruthware.com', 123),
-('Louise', 'Penny', 1958, NULL, 'https://de.wikipedia.org/wiki/Louise_Penny', 363),
-('Helen', 'Hardt', NULL, NULL, 'https://www.goodreads.com/author/show/2993356.Helen_Hardt', 432),
-('Dan', 'Brown', 1964, NULL, 'https://de.wikipedia.org/wiki/Dan_Brown', 453),
-('Stephen', 'King', 1947, NULL, 'https://en.wikipedia.org/wiki/Stephen_King', 665),
-('Ken', 'Follett', 1949, NULL, 'https://de.wikipedia.org/wiki/Ken_Follett', 696);
+INSERT INTO `Author` (`First Name`, `Last Name`, `Year of Birth`, `Social Security Number`, `Link for more Info`, `AuthorID`) VALUES
+('Ruth', 'Ware', 1977, NULL, 'http://www.ruthware.com', 1),
+('Louise', 'Penny', 1958, NULL, 'https://de.wikipedia.org/wiki/Louise_Penny', 2),
+('Helen', 'Hardt', NULL, NULL, 'https://www.goodreads.com/author/show/2993356.Helen_Hardt', 3),
+('Dan', 'Brown', 1964, NULL, 'https://de.wikipedia.org/wiki/Dan_Brown', 4),
+('Ken', 'Follett', 1949, NULL, 'https://de.wikipedia.org/wiki/Ken_Follett', 5),
+('Stephen', 'King', 1947, NULL, 'https://en.wikipedia.org/wiki/Stephen_King', 665);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `authorbook`
+--
+
+CREATE TABLE `authorbook` (
+  `AuthorID` int(11) NOT NULL,
+  `BookID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `authorbook`
+--
+
+INSERT INTO `authorbook` (`AuthorID`, `BookID`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
 
 -- --------------------------------------------------------
 
@@ -67,8 +91,9 @@ INSERT INTO `Author` (`First Name`, `Last Name`, `Year of Birth`, `Social Securi
 --
 
 CREATE TABLE `Book` (
-  `BookID` varchar(13) NOT NULL,
+  `BookID` int(13) NOT NULL,
   `Title` varchar(20) NOT NULL,
+  `Author` varchar(30) NOT NULL,
   `Reserved` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -76,10 +101,10 @@ CREATE TABLE `Book` (
 -- Daten für Tabelle `Book`
 --
 
-INSERT INTO `Book` (`BookID`, `Title`, `Reserved`) VALUES
-('001', 'Unknown', 0),
-('002', 'Test', 0),
-('231', 'Nice Book', 0);
+INSERT INTO `Book` (`BookID`, `Title`, `Author`, `Reserved`) VALUES
+(1, 'Harry Potter', 'J.K. Rowling', 0),
+(3, 'Book No. 3', 'Sir Three', 0),
+(5, 'Origin', 'Ken Follet', 0);
 
 -- --------------------------------------------------------
 
@@ -141,7 +166,7 @@ ALTER TABLE `Admin`
 -- Indizes für die Tabelle `Author`
 --
 ALTER TABLE `Author`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`AuthorID`);
 
 --
 -- Indizes für die Tabelle `Book`
@@ -165,6 +190,16 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
+--
+-- AUTO_INCREMENT für Tabelle `Admin`
+--
+ALTER TABLE `Admin`
+  MODIFY `AdminID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT für Tabelle `Book`
+--
+ALTER TABLE `Book`
+  MODIFY `BookID` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT für Tabelle `comments`
 --

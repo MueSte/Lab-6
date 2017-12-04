@@ -1,4 +1,7 @@
-<?php include("config.php"); ?>
+<!-- In this file:
+anding page after upload, should be within admin panel (now its not in the backend anymore) -->
+
+ <?php include("config.php"); ?>
 <?php include("header.php"); ?>
 
 <div class="maincontent">
@@ -59,7 +62,7 @@ if (isset($_FILES['upload'])){
     $extension = strtolower(substr($_FILES['upload']['name'], strrpos($_FILES['upload']['name'], '.') + 1));
     
     #test by echoing out what you upload
-    echo "Your file extension is: ".$extension;
+    // echo "Your file extension is: ".$extension;
     
     #we create an array called 'error' to store all our errors, so we can later use them.
     $error = array ();
@@ -94,7 +97,7 @@ if (isset($_FILES['upload'])){
         #But, before we do so it will be good to do all of the ABOVE written first
         #We check for errors that might disturb our code, and try to avoid them
         #if there are no errrors move the file to the desired file location
-        move_uploaded_file($_FILES['upload']['tmp_name'], "uploadedfiles/{$_FILES['upload']['name']}");     
+        move_uploaded_file($_FILES['upload']['tmp_name'], "../uploadedfiles/{$_FILES['upload']['name']}");     
     }
     
 }
@@ -102,14 +105,8 @@ if (isset($_FILES['upload'])){
 
 ?>
 
+</div>
 
-<html>
-    <head>
-        <title>Security - Upload</title>
-           </head>
-           
-           <body>
-               <div>
                    <?php 
                    
                    #Now we want to either upload the file or type an error
@@ -142,17 +139,19 @@ if (isset($_FILES['upload'])){
                <!-- This is our form, important to use "enctype="multipart/form-data"
                
                -->
-               <div>
-                   
+               
+                <div class="maincontent">
                    <form action="" method="POST" enctype="multipart/form-data">
                        <input type="file" name="upload" /></br>
                        <input  type="submit" value="submit" />
                    </form>                   
                </div>
-           </body>
+
     
     
     
 </div>    
-</html>
+
+
+
 <?php include("footer.php"); ?>

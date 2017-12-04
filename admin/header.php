@@ -20,7 +20,7 @@
 					<a class="<?php echo ($current_page == 'deletebook.php' || $current_page == '') ? 'active' : NULL ?>" href="deletebook.php">DELETE BOOK</a>
 				</li>
 				<li>
-					<a class="<?php echo ($current_page == 'SQLinjection.php' || $current_page == '') ? 'active' : NULL ?>" href="SQLinjection.php">UPLOAD</a>
+					<a class="<?php echo ($current_page == 'gallery.php' || $current_page == '') ? 'active' : NULL ?>" href="gallery.php">UPLOAD</a>
 				</li>
 				<li>
 					<a class="<?php echo ($current_page == 'logout.php' || $current_page == '') ? 'active' : NULL ?>" href="logout.php">LOGOUT</a>

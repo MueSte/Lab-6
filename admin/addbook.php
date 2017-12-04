@@ -15,6 +15,9 @@ $title = "Add new book";
 include("header.php");
 ?>
 
+
+<div class="maincontent">
+
 <?php
 if (isset($_POST['newbooktitle'])) {
     // This is the postback so add the book to the database
@@ -41,8 +44,8 @@ if (isset($_POST['newbooktitle'])) {
     }
 
     // Prepare an insert statement and execute it
-    $stmt = $db->prepare("insert into Book(BookID, Title, Author) values (null, ?, ?)"); //do I need BookID //BookID Title Author Reserved, but BookID is AI...and reserved should be 0
-    $stmt->bind_param('iss', $newbooktitle, $newbookauthor); //sending it as string
+    $stmt = $db->prepare("insert into Book(Title, Author) values (?, ?)"); //do I need BookID //BookID Title Author Reserved, but BookID is AI...and reserved should be 0
+    $stmt->bind_param('ss', $newbooktitle, $newbookauthor); //sending it as string
     $stmt->execute();
     printf("<br>Book Added!");             
     printf("<br><a href=index.php>Return to home page </a>");
@@ -75,4 +78,6 @@ Enter both, a title and an author.
         </tbody>
     </table>
 </form>
+</div>
+
 <?php include("footer.php"); ?>
